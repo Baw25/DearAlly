@@ -1,0 +1,15 @@
+<h1>Discussions</h1>
+C1<br>
+C2<br>
+C3
+
+<% 3.times do %>
+  <h4>heehee</h4>
+<% end %>
+<%= @greeting %>
+
+<% @discussions.each do |discussion| %>
+  <h3><%= discussion.name %></h3>
+<% end %>
+
+

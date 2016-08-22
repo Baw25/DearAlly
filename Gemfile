@@ -12,7 +12,7 @@ gem 'activerecord', '~>4.2.0'
 
 gem 'rake'
 
-gem 'shotgun'
+gem 'shotgun' # runs basics server
 
 group :test do
   gem 'shoulda-matchers'
