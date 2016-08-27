@@ -1,3 +1,4 @@
+# DISPLAY
 get '/allies' do
   @allies = Ally.all
 
@@ -10,11 +11,13 @@ get '/allies/new' do
 end
 
 post '/allies' do
-  if params[:password_confirmation] == params[:ally][:password]
+  ally = params[:ally]
+  if params[:password_confirmation] == ally[:password_hash]
+
     @ally = Ally.new(params[:ally])
     if @ally.save
-      session[:id] = @ally.id
-      erb :"index"
+      # session[:id] = @ally.id
+      redirect "/allies/#{@ally.id}"
     else
       @errors = @ally.errors.full_messages
       erb :'error'
@@ -26,9 +29,11 @@ post '/allies' do
 end
 
 get '/allies/:id' do
+  p "redirected yah"
+  p params
   @ally = Ally.find(params[:id])
-  @status = Ally.is_available
-  erb :'allies/show'
+#  @status = Ally.is_available
+  erb :'/allies/show'
 end
 
 get '/allies/:id/edit' do
@@ -39,7 +44,7 @@ end
 
 put '/allies/:id' do
   @ally = Ally.find(params[:id])
-  @ally.is_available 
+#  @ally.is_available
 end
 
 delete '/allies/:id' do
