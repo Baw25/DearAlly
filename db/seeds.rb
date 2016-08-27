@@ -21,3 +21,4 @@ CSV.foreach(ALLY_CATEGORY_LIST, headers: true, header_converters: :symbol) do |l
   AllyCategory.create(line.to_h)
 end
 
+
