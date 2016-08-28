@@ -15,11 +15,11 @@
 # temp_user CREATE
 post '/temp_users' do
   #params passes TempUser.categories will be passed here
-  p params
-  @category = Category.find(params[:category_id])
-  puts @category
+  # p params
+  # @category = Category.find(params[:category_id])
+  # puts @category
   @temp_user = TempUser.new()
-  @temp_user.category = @category.title
+  # @temp_user.category = @category.title
   if @temp_user.save
     redirect "/temp_users/#{@temp_user.id}"
   else

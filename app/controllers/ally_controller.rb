@@ -65,7 +65,6 @@ end
 
 
 delete '/allies/:id' do
-
   @ally = Ally.find(params[:id])
   @ally.destroy
   redirect "/allies"
