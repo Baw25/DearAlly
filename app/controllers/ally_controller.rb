@@ -24,14 +24,16 @@ post '/allies' do
     end
   else
     @errors = ["Passwords do not match!"]
-    erb :'allies/new'
+    erb :'/allies/new'
   end
 end
 
 get '/allies/:id' do
+  #need to route to chat view. We will determing the users with sessions
   @ally = Ally.find(params[:id])
   @status = @ally.available?
-  erb :'/allies/show'
+  erb :'/allies/../chat_layout'
+  # erb :'/allies/show'
 end
 
 # EDIT
