@@ -16,7 +16,7 @@ post '/allies' do
 
     @ally = Ally.new(params[:ally])
     if @ally.save
-      # session[:id] = @ally.id
+      session[:id] = @ally.id
       redirect "/allies/#{@ally.id}"
     else
       @errors = @ally.errors.full_messages
@@ -29,10 +29,8 @@ post '/allies' do
 end
 
 get '/allies/:id' do
-  p "redirected yah"
-  p params
   @ally = Ally.find(params[:id])
-#  @status = Ally.is_available
+  @status = @ally.available?
   erb :'/allies/show'
 end
 
@@ -44,7 +42,8 @@ end
 
 put '/allies/:id' do
   @ally = Ally.find(params[:id])
-#  @ally.is_available
+
+  p @ally.available?
 end
 
 delete '/allies/:id' do
