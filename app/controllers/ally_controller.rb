@@ -35,12 +35,15 @@ get '/allies/:id' do
 end
 
 get '/allies/:id/edit' do
+  #when loged in you should be able to click on the header image
+  #and it should take you into the edit profile page
   @ally = Ally.find(params[:id])
 
   erb :'/allies/edit'
 end
 
 put '/allies/:id' do
+  #edit the ally pages
   @ally = Ally.find(params[:id])
 
   redirect "/allies/#{@ally.id}"

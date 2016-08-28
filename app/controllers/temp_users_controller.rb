@@ -24,6 +24,10 @@ end
 
 # temp_user SHOW
 get '/temp_users/:id' do
+  #start the instance of the chat
+  #create channel and hide the chat box
+  
+
   @temp_user = TempUser.find(params[:id])
   erb :'temp_users/show'
 end
@@ -42,7 +46,7 @@ end
 #   redirect "/temp_users/show"
 # end
 get '/temp_users/review' do 
-  erb: '/temp_users/review'
+  erb :'/temp_users/review'
 end
 
 # temp_user DESTROY
