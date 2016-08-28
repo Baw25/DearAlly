@@ -2,13 +2,11 @@
   box-sizing:border-box;
 }
 
-html, body { 
+html, body {
   padding:0;
   margin:0;
-  height:100%;
   width:100%;
-  color:#dedede;
-
+  height: 100%;
   /*background-color: #849091;*/
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
@@ -22,7 +20,7 @@ header {
 
 header a, header a:visited {
   font-size:18px;
-  color:#dedede;
+  color:#ADD8E6;
   text-decoration:none;
 }
 
@@ -33,7 +31,7 @@ header a:hover {
 section {
   /*changes outside of message boxs*/
   height:70%;
-  background-color:#66a9be;
+  background-color: #ADD8E6;
 
 }
 
@@ -48,7 +46,8 @@ section input {
   border-bottom:1px solid #2B2B2A;
   padding:0;
   font-size:42px;
-  color:#eee;
+  display: block;
+  color: white;
 }
 
 #chat_section{
@@ -58,32 +57,40 @@ section input {
 
 #messages {
   /*changes inside the chat box*/
-  background-color:#ADD8E6;
-  padding:10px;
-  height:300px;
-  width:600px;
-  margin:0 auto;
+  background-color:white;
+  padding: 30px;
+  position: relative;
+  height: 530px;
+  left: 20px;
+  width: 1100px;
+  margin: 0 auto;
   vertical-align: middle;
   color: #849091;
-}
-
-#messages p {
-  margin:0px 0;
-  padding:0;
 }
 
 
 .info {
   margin:5px 0;
   font-style:italic;
+  position: relative;
+  display: block;
+  top: 0;
 }
 
 #chat-input{
   margin-top: 100px;
   padding-bottom: 10px;
   width: 600px;
-  color: #cdd2d3; 
+  color: black;
+  display: block;
+  position: relative;
   border-color: #849091;
+}
+
+.text_input {
+  background-color: pink;
+  position: relative;
+  bottom: 0;
 }
 
 #chat_container{

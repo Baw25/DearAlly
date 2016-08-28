@@ -1,6 +1,6 @@
 $(function() {
     console.log("hi blakes")
-    // Get handle to the chat div 
+    // Get handle to the chat div
     var $chatWindow = $('#messages');
 
     // Manages the state of our access token we got from the server
@@ -42,10 +42,10 @@ $(function() {
     }
 
     // Alert the user they have been assigned a random username
-    print('Logging in an an Ally..');
+    print('Logging in an Ally..');
 
     // Get an access token for the current user, passing a username (identity)
-    // and a device ID - for browser-based apps, we'll always just use the 
+    // and a device ID - for browser-based apps, we'll always just use the
     // value "browser"
     $.getJSON('/token', {
         identity: username,
@@ -53,7 +53,7 @@ $(function() {
     }, function(data) {
         // Alert the user they have been assigned a random username
         username = data.identity;
-        print('You have been assigned a random username of: ' 
+        print('You have been assigned a random username of: '
             + '<span class="me">' + username + '</span>', true);
 
         // Initialize the IP messaging client
@@ -89,7 +89,7 @@ $(function() {
     function setupChannel() {
         // Join the general channel
         generalChannel.join().then(function(channel) {
-            print('Joined channel as ' 
+            print('Joined channel as '
                 + '<span class="me">' + username + '</span>.', true);
         });
 

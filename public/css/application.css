@@ -24,6 +24,7 @@ nav {
 	width: 100%;
 	background-color: #DFD2F5;
   background-color: white;
+  position: absolute;
 }
 
 .main_title {
@@ -393,10 +394,25 @@ body {
 
 form {
   background: #D2D2D2;
+  position: relative;
   max-width: 600px;
-  margin: 50px auto;
+  bottom: 0;
+  margin: auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  bottom: 0;
+}
+
+.form_container {
+     position: absolute;
+     margin: auto;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 40px;
+     width: 700px;
+     height: 500px;
+
 }
 
 input::-webkit-input-placeholder {
