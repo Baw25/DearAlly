@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <title>Hello</title>
+    <div class="test">
+    <script src="http://js.pusher.com/1.11/pusher.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var pusher = new Pusher('0abdb79d2684ba446a83'); 
+        var channel = pusher.subscribe('test_channel');
+        channel.bind('new_message', function(data) {
+          $('.messages').append("<div class=\"message\">" + data.message + "</div>");
+        });
+        Pusher.log = function(message) {
+          if (window.console && window.console.log) window.console.log(message);
+        };
+        $("#message_form").submit(function(e) {
+            e.preventDefault();
+            $.post('/messages', $(this).serialize(), function() {
+                $("#message_form input").val('');
+            });
+        });
+      });
+    </script>
+    </div>
+</head>
+<body>
+    <%= yield %>
+</body>
+</html>
+
+
