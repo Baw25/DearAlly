@@ -1,15 +1,40 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-  // root page jquery
-  // $("#get_help").click(function){
-  //  
-  // }
 
   $( "#get_help" ).click(function() {
-     $("#help_form").submit();
+    $( "#get_help" ).fadeOut( "fast", function() {
+      $( "#help_categories").css("visibility", "visible");
+        $ ("#category1").css('visibility','visible').hide().fadeIn("fast");
+        $ ("#category2").css('visibility','visible').hide().fadeIn("fast");
+        $ ("#category3").css('visibility','visible').hide().fadeIn("fast");
+        $ ("#category4").css('visibility','visible').hide().fadeIn("fast");  
+        $ ("#category5").css('visibility','visible').hide().fadeIn("fast");
+    });
+  });
+
+  $( "#category1" ).click(function() {
+    $( "#help_cat_id").val("1");
+    $( "#help_form").submit();
+  });
+
+  $( "#category2" ).click(function() {
+    $( "#help_cat_id").val("2");
+    $( "#help_form").submit();
+  });
+
+  $( "#category3" ).click(function() {
+    $( "#help_cat_id").val("3");
+    $( "#help_form").submit();
+  });
+
+  $( "#category4" ).click(function() {
+    $( "#help_cat_id").val("4");
+    $( "#help_form").submit();
+  });
+
+  $( "#category5" ).click(function() {
+    $( "#help_cat_id").val("5");
+    $( "#help_form").submit();
   });
 });
+
+

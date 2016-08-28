@@ -6,8 +6,9 @@
 
 #help_categories {
 	position: absolute;
-	visibility : hidden;
-	top: 0px;
+  top: 300px;
+  right: 50px;
+  visibility : hidden;
 }
 
 .nav_container {
@@ -371,6 +372,26 @@ body {
   text-transform: uppercase;
   background-color: #f7f7f7;
 }
+
+/*#category1 {
+  visibility: hidden;
+}
+
+#category2 {
+  visibility: hidden;
+}
+
+#category3 {
+  visibility: hidden;
+}
+
+#category4 {
+  visibility: hidden;
+}
+
+#category5 {
+  visibility: hidden;
+}*/
 
 /*Landing Page-------------------------------------------
 ---------------------------------------------------------

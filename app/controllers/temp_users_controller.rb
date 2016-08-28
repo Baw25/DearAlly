@@ -15,11 +15,13 @@
 # temp_user CREATE
 post '/temp_users' do
   #params passes TempUser.categories will be passed here
-
-  @temp_user = TempUser.new(params)
+  p params
+  @category = Category.find(params[:category_id])
+  puts @category
+  @temp_user = TempUser.new()
+  @temp_user.category = @category.title
   if @temp_user.save
     redirect "/temp_users/#{@temp_user.id}"
-
   else
     @errors = @temp_user.errors.full_messages
     erb :'temp_users/new'
@@ -28,10 +30,15 @@ end
 
 # temp_user SHOW
 get '/temp_users/:id' do
-
+  
   #start the instance of the chat
-
+  @ally = Ally.last
   @temp_user = TempUser.find(params[:id])
+  puts @temp_user
+  puts @temp_user.inspect
+  redirect "/allies/#{@ally.id}"
+  #need to find a chat box
+
   erb :'temp_users/show'
 end
 
