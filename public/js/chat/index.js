@@ -1,4 +1,5 @@
 $(function() {
+    console.log("hi blakes")
     // Get handle to the chat div 
     var $chatWindow = $('#messages');
 
