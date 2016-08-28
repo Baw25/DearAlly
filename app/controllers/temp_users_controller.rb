@@ -1,4 +1,5 @@
 # temp_user INDEX
+
 # get '/temp_users' do
 #   @temp_users = TempUser.all
 #   erb :'temp_users/show'
@@ -10,13 +11,15 @@
 #   erb :'temp_users/new'
 # end
 
+
 # temp_user CREATE
 post '/temp_users' do
   #params passes TempUser.categories will be passed here
-  
+
   @temp_user = TempUser.new(params)
   if @temp_user.save
     redirect "/temp_users/#{@temp_user.id}"
+
   else
     @errors = @temp_user.errors.full_messages
     erb :'temp_users/new'
@@ -25,13 +28,15 @@ end
 
 # temp_user SHOW
 get '/temp_users/:id' do
+
   #start the instance of the chat
-  #create channel and hide the chat box 
+
   @temp_user = TempUser.find(params[:id])
   erb :'temp_users/show'
 end
 
 # temp_user EDIT
+
 # get '/temp_users/:id/edit' do
 #   @temp_user = TempUser.find(params[:id])
 #   erb :'temp_users/edit'
@@ -58,9 +63,8 @@ delete '/temp_users/:id' do
   @temp_user = TempUser.find(params[:id])
   #@ally_id = Chat.where(params[:id])[0].ally_id
   @temp_user.destroy
-  redirect "/"
+
+  redirect '/temp_users/review'
+
 end
-
-
-
 

@@ -1,0 +1,11 @@
+#help_form {
+	position: absolute;
+	visibility : hidden;
+	top: 0px;
+}
+
+#help_categories {
+	position: absolute;
+	visibility : hidden;
+	top: 0px;
+}
