@@ -1,4 +1,4 @@
 get '/' do
-  redirect '/chat'
-  # erb :'/index'
+	@categories = Category.all
+  erb :'/index'
 end

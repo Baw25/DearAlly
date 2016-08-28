@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/css/index.css">
+  <div class="nav_container">
+    <nav>
+      <span><a href="#">LOGIN</a></span> | </span><span><a href="#">REGISTER</a></span>
+    </nav>
+  </div>
+<div class="panels">
+  <div class="panels__container">
+    <a href="/allies/new" class="panel">
+      <div class="panel__content" style="background-color: #ADD8E6">
+        <h3 class="panel__title" id="become_ally">BECOME AN ALLI</h3>
+      </div>
+    </a>
+    <!-- I NEED HELP HERE -->
+    <a class="panel">
+      <div class="panel__content" style="background-color: pink">
+        <h3 class="panel__title" id="get_help">BECOME AN ALLI</h3>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- todo -->
+<div id="help_categories">
+  <% @categories.each do |category| %>
+    <li><%=category.id.to_i %>><%= category.title %></li>
+  <% end %>
+</div> 
+
+<form action='/temp_users' method='POST' id="help_form" >
+  <div class="panel__content" style="background-color: pink">
+    <h1 class="panel__title" id="help_index">I NEED HELP HERE</h1>
+  </div>
+</form>
+
