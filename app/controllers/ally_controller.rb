@@ -61,3 +61,4 @@ delete '/allies/:id' do
   @ally.destroy
   redirect "/allies"
 end
+

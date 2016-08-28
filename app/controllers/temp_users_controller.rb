@@ -30,7 +30,6 @@ end
 get '/temp_users/:id' do
 
   #start the instance of the chat
-  #create channel and hide the chat box
 
   @temp_user = TempUser.find(params[:id])
   erb :'temp_users/show'
@@ -43,6 +42,10 @@ end
 #   erb :'temp_users/edit'
 # end
 
+get 'temp_users' do
+  erb :'temp_users'
+end
+
 
 # temp_user UPDATE
 # put '/temp_users/:id' do
@@ -51,14 +54,17 @@ end
 #   redirect "/temp_users/show"
 # end
 get '/temp_users/review' do 
-  erb :'/temp_users/review'
+  erb :'temp_users/review'
 end
 
 # temp_user DESTROY
 delete '/temp_users/:id' do
-  #pass the chat id and update the ally.rating score
+
   @temp_user = TempUser.find(params[:id])
+  #@ally_id = Chat.where(params[:id])[0].ally_id
   @temp_user.destroy
+
   redirect '/temp_users/review'
 
 end
+

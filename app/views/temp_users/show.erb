@@ -13,9 +13,10 @@
 	Helpers
 </div>
 
+
 <div>
-	<form action='temp_users/:id' method="post">
-		<input name="_method" type="hidden" value="put" />
-		<button type="button">End Chat</button>
+	<form action='/temp_users/<%= @temp_user.id %>' method="POST">
+		<input name="_method" type="hidden" value="DELETE" />
+		<input type="submit" value="End Chat">
 	</form>
 </div>
