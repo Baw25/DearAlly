@@ -1,26 +1,46 @@
-* {
+/** {
   box-sizing:border-box;
-}
+}*/
 
 html, body {
   padding:0;
   margin:0;
   height:100%;
   width:100%;
-  color:#dedede;
+  /*color:#dedede;*/
 
   /*background-color: #849091;*/
-  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  /*font-family: 'Helvetica Neue', Helvetica, sans-serif;*/
 }
 
-header {
+.nav_container {
+  display: block;
+  width: 100%;
+  background-color: #DFD2F5;
+  background-color: white;
+}
+
+.main_title {
+  font-family: 'Oswald';
+  font-size: 50px;
+  position: relative;
+  color: black;
+  letter-spacing: 6px;
+  float: right;
+  right: 39%;
+  display: inline;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  padding-right: 30px;
+}
+/*header {
   width:100%;
   position:absolute;
   text-align:center;
   bottom:20px;
-}
+}*/
 
-header a, header a:visited {
+/*header a, header a:visited {
   font-size:18px;
   color:#dedede;
   text-decoration:none;
@@ -28,12 +48,12 @@ header a, header a:visited {
 
 header a:hover {
   text-decoration:underline;
-}
+}*/
 
 section {
   /*changes outside of message boxs*/
   height:70%;
-  background-color: #ADD8E6;
+  background-color: #BFD5B9;
 
 }
 
@@ -109,8 +129,7 @@ section input {
   margin:5px 0;
   color:#fff;
   /*padding-bottom: 200px;*/
-}
-*/
+
 /*.message-container .username {
   display:inline-block;
   margin-right:5px;
@@ -120,7 +139,7 @@ section input {
 
 .me, .username.me {
   font-weight:bold;
-  color:cyan;
+  color:#7997A1;
 }
 
 .message-container .username.me {
@@ -131,4 +150,5 @@ section input {
 #log_out_button {
   position: absolute;
   top: 0px;
+
 }

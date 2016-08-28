@@ -368,7 +368,7 @@ a:active {
 html,
 body {
   height: 100%;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Oswald';
   text-transform: uppercase;
   background-color: #f7f7f7;
 }
