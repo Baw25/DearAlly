@@ -91,18 +91,18 @@ section input {
   height: 1200px;
   /*background-color: #ADD8E6;*/
 }
-.message-container {
+/*.message-container {
   margin:5px 0;
   color:#fff;
   padding-bottom: 200px;
 }
-
-.message-container .username {
+*/
+/*.message-container .username {
   display:inline-block;
   margin-right:5px;
   font-weight:bold;
   /*color:#849091;*/
-}
+
 
 .me, .username.me {
   font-weight:bold;
