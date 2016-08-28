@@ -1,5 +1,5 @@
 $(function() {
-    console.log("hi blakes")
+    // console.log("hi blakes")
     // Get handle to the chat div 
     var $chatWindow = $('#messages');
 
@@ -42,7 +42,7 @@ $(function() {
     }
 
     // Alert the user they have been assigned a random username
-    print('Logging in an an Ally..');
+    print('Logging in...');
 
     // Get an access token for the current user, passing a username (identity)
     // and a device ID - for browser-based apps, we'll always just use the 
@@ -53,7 +53,7 @@ $(function() {
     }, function(data) {
         // Alert the user they have been assigned a random username
         username = data.identity;
-        print('You have been assigned a random username of: ' 
+        print('You have been assigned random username: ' 
             + '<span class="me">' + username + '</span>', true);
 
         // Initialize the IP messaging client
@@ -90,7 +90,7 @@ $(function() {
         // Join the general channel
         generalChannel.join().then(function(channel) {
             print('Joined channel as ' 
-                + '<span class="me">' + username + '</span>.', true);
+                + '<span class="me">' + username + '</span>', true);
         });
 
         // Listen for new messages sent to the channel
