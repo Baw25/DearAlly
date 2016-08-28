@@ -33,8 +33,19 @@
     <script src="/js/chat/index.js"></script>
   </div>
 
-    
-  
+  <% if session[:ally_id] %>
+    <form action="/allies/:id" method="POST" id="toggle"/>
+      <input type="hidden" name="_method" value="PUT">
+
+      <% if @ally[:available?] == false %>
+        <input type="hidden" name="available?" value="true">
+        <input type="submit" name="" value="I'm avaiable to help">
+      <%else%>
+        <input type="hidden" name="available?" value="false">
+        <input type="submit" name="" value="end chat">
+      <%end%>
+    </form>
+  <% end %>
 </body>
 
 

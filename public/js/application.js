@@ -35,6 +35,13 @@ $(document).ready(function() {
     $( "#help_cat_id").val("5");
     $( "#help_form").submit();
   });
+
+
+  //chat toggle
+  $('#toggle').submit(function() {
+    sendContactForm();
+    return false;
+  });
 });
 
 
