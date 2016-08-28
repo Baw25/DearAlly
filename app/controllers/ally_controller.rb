@@ -32,6 +32,8 @@ get '/allies/:id' do
   #need to route to chat view. We will determing the users with sessions
   @ally = Ally.find(params[:id])
   @status = @ally.available?
+
+
   erb :'/allies/../chat_layout'
   # erb :'/allies/show'
 end
@@ -48,17 +50,22 @@ end
 # UPDATE
 put '/allies/:id' do
   #get params from url
-  @ally = Ally.find(params[:id])
-  @ally.assign_attributes(params[:ally])
-  if @ally.save
-    redirect "/allies/#{@ally.id}" #redirect back to ally index page
-  else
-    erb :'allies/edit' #show edit ally view again(potentially displaying errors)
-  end
+  puts params
+  ses = session[:ally_id]
+  @ally = Ally.find(ses)
+  @ally[:available?] = params[:available?]
+  @ally.save
+  redirect "/allies/#{@ally.id}" #redirect back to ally index page
+  # if @ally.save
+    
+  # else
+  #   erb :'allies/edit' #show edit ally view again(potentially displaying errors)
+  # end
 end
 
 
 delete '/allies/:id' do
+
   @ally = Ally.find(params[:id])
   @ally.destroy
   redirect "/allies"
