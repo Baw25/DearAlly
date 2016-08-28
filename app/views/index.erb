@@ -1,21 +1,29 @@
-<h1><a href="/allies/new" >Become an Alli </a></h1>
+<div class="panels">
+  <div class="panels__container">
+    <a href="/allies/new" class="panel">
+      <div class="panel__content" style="background-color: #ADD8E6">
+      <h3 class="panel__title" id="become_ally">BECOME AN ALLI</h3>
+      </div>
+    </a>
+    <!-- I NEED HELP HERE -->
+     <form action='/temp_users' method='POST' class="panel">
+        <div class="panel__content" style="background-color: pink">
+          <h1 class="panel__title">I NEED HELP HERE</h1>
+          <!-- <button type="submit" class="button button-block"/>I need help!</button> -->
+        </div>
+      </form>
+  </div>
+</div>
+
+<!-- todo -->
+
+ <select name="category">
+          <% @categories.each do |category| %>
+            <option value=<%=category.id.to_i %>><%= category.title %></option>
+          <% end %>
+         </select>
+     
 
 
-
-
-
-
-<form action='/temp_users' method='POST'>
-  	 <select name="category">
-      <% @categories.each do |category| %>
-        <option value=<%=category.id.to_i %>><%= category.title %></option>
-    <% end %>
-   </select>
-
-   </br>
-   </br>
-   <button type="submit" class="button button-block"/>I need help!</button>
-
- </form>
 
 <!--  {"category"=>"3"} -->
