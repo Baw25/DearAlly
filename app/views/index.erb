@@ -17,19 +17,21 @@
         <h3 class="panel__title" id="get_help">I NEED HELP</h3>
       </div>
     </a>
+ 
   </div>
 </div>
-
+ <%= @categories %>
 <!-- todo -->
-<div id="help_categories">
-  <% @categories.each do |category| %>
-    <li><%=category.id.to_i %>><%= category.title %></li>
-  <% end %>
-</div> 
-
 <form action='/temp_users' method='POST' id="help_form" >
+  <input type="hidden" name="category_id" id="help_cat_id">
   <div class="panel__content" style="background-color: pink">
     <h1 class="panel__title" id="help_index">I NEED HELP HERE</h1>
   </div>
 </form>
 
+<!-- hidden and jquery out -->
+  <div id="help_categories">
+    <% @categories.each do |category| %>
+      <h2 id="category<%=category.id%>"><%= category.title %></h2>
+    <% end %>
+  </div>
