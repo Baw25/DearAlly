@@ -71,7 +71,7 @@ delete '/temp_users/delete' do
   # if @temp_user
   #   @temp_user.destroy
   # end
-  redirect "http://facebook.com"
+  redirect "http://www.blank.org/"
 end
 
 get '/safe' do

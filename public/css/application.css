@@ -1,4 +1,31 @@
+#ahh{
+	vertical-align: middle;
+	text-align: center;
+}
 
+#safe_exit{
+    background-color: #95ba8b;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    font-size: 20px;
+    height: 100px;
+}
+
+#safe_button{
+	background-color: #95ba8b;
+	vertical-align: middle;
+	border-style: none;
+	
+	width: 100%
+	height: 100%;
+	font-size: 50px;
+}
 /*Landing Page---------------------------------------------
 ---------------------------------------------------------
 ---------------------------------------------------------

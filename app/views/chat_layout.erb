@@ -34,6 +34,16 @@
     <script src="/js/chat/index.js"></script>
   </div>
 
+<<<<<<< HEAD
+=======
+    <!-- safe button -->
+  <div id="ahh">
+    <form action="/temp_users/delete" method="POST" id="safe_exit">
+      <input name="_method" type="hidden" value="DELETE" />
+      <input type="submit" id="safe_button" value="Safe Exit">
+    </form>
+  </div>
+>>>>>>> 995cde5aba0b0d935786e21306c2fa88fa0f6c00
 
   <% if session[:ally_id] %>
     <form action="/allies/:id" method="POST" id="toggle"/>
