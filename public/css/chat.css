@@ -2,7 +2,7 @@
   box-sizing:border-box;
 }
 
-html, body { 
+html, body {
   padding:0;
   margin:0;
   height:100%;
@@ -33,7 +33,7 @@ header a:hover {
 section {
   /*changes outside of message boxs*/
   height:70%;
-  background-color:#66a9be;
+  background-color: #ADD8E6;
 
 }
 
@@ -54,17 +54,21 @@ section input {
 #chat_section{
   vertical-align: middle;
   padding-top: 120px;
+  height: 100%;
 }
 
 #messages {
   /*changes inside the chat box*/
-  background-color:#ADD8E6;
+  background-color:white;
   padding:10px;
-  height:300px;
-  width:600px;
+  height:600px;
+  width:900px;
   margin:0 auto;
   vertical-align: middle;
   color: #849091;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  border: solid pink 2px;
+  position: relative;
 }
 
 #messages p {
@@ -81,9 +85,16 @@ section input {
 #chat-input{
   margin-top: 100px;
   padding-bottom: 10px;
-  width: 600px;
-  color: #cdd2d3; 
+  width: 98%;
+  color: #cdd2d3;
   border-color: #849091;
+  display: inline-block;
+  vertical-align: bottom;
+  position: absolute;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  bottom: 0;
+  border: 1px solid black;
 }
 
 #chat_container{
@@ -118,4 +129,3 @@ section input {
   position: absolute;
   top: 0px;
 }
-
