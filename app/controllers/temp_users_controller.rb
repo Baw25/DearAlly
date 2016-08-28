@@ -65,13 +65,16 @@ get '/temp_users/review' do
 end
 
 # temp_user DESTROY
-delete '/temp_users/:id' do
+delete '/temp_users/delete' do
+  @temp_user = TempUser.all
+  # p @temp_user
+  # if @temp_user
+  #   @temp_user.destroy
+  # end
+  redirect "http://facebook.com"
+end
 
-  @temp_user = TempUser.find(params[:id])
-  #@ally_id = Chat.where(params[:id])[0].ally_id
-  @temp_user.destroy
-
-  redirect '/temp_users/review'
-
+get '/safe' do
+  erb :'temp_users/safe'
 end
 
