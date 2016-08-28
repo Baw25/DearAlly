@@ -1,1 +1,19 @@
-login
+<link rel="stylesheet" href="/css/login.css">
+
+<div id="login_form_container">
+	<form action="/sessions" method="POST">
+ <!--CREATE NEW-->
+
+  <div class="field-wrap">
+    <input type="email" name="session[email]" required autocomplete="off" placeholder="Email" />
+  </div>
+
+  <div class="field-wrap">
+    <input type="password" name="session[password_hash]" required autocomplete="off" placeholder="Password" />
+  </div>
+
+  <button type="submit" class="button button-block"/>Log In</button>
+
+</form>
+</div>
+

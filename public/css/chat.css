@@ -114,3 +114,8 @@ section input {
   margin-right:5px;
 }
 
+#log_out_button {
+  position: absolute;
+  top: 0px;
+}
+
