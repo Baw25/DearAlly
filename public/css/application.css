@@ -23,6 +23,7 @@ nav {
 	display: block;
 	width: 100%;
 	background-color: #DFD2F5;
+  background-color: white;
 }
 
 .main_title {
@@ -36,6 +37,7 @@ nav {
 	display: inline;
 	margin: 0 auto;
 	padding-bottom: 15px;
+  padding-right: 30px;
 }
 
 .panels {
@@ -376,6 +378,7 @@ body {
   height: 100%;
 	font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
+  background-color: white;
 }
 
 /*Landing Page-------------------------------------------
