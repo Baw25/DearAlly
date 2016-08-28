@@ -1,0 +1,31 @@
+<h1 class="title">Become An Ally</h1>
+
+<form action="/allies" method="POST"> <!--CREATE NEW-->
+
+  <h1 class="sign_up">Sign Up</h1>
+
+  <div class="field-wrap">
+    <input type="text" name="ally[name]" required autocomplete="off" placeholder="Name"/>
+  </div>
+
+<!--   <div class="field-wrap">
+    <input type="text" name="ally[last_name]" required autocomplete="off" placeholder="Last Name" />
+  </div> -->
+
+  <div class="field-wrap">
+    <input type="email" name="ally[email]" required autocomplete="off" placeholder="Email" />
+  </div>
+
+  <div class="field-wrap">
+    <input type="password" name="ally[password_hash]" required autocomplete="off" placeholder="Password" />
+  </div>
+
+   <div class="field-wrap">
+    <input type="password" name="password_confirmation" required autocomplete="off" placeholder="Confirm Password" />
+  </div>
+
+  <button type="submit" class="button button-block"/>Get Started</button>
+
+</form>
+
+<h3><a href="/sessions/new">Already have an account?</a></h3>

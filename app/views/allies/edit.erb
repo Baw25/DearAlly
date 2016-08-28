@@ -1,0 +1,27 @@
+<h1 class="title">Edit My Information</h1>
+
+<form method="POST" action="/allies/<%=@ally.id%>" >
+  <input type="hidden" name="_method" value="put">
+  <div class="field-wrap">
+    <input type="text" name="ally[name]" value="<%= @ally.name %>">
+  </div>
+
+<!--   <div class="field-wrap">
+    <input type="text" name="ally[last_name]" required autocomplete="off" placeholder="Last Name" />
+  </div> -->
+
+  <div class="field-wrap">
+    <input type="email" name="ally[email]" value="<%= @ally.email %>" >
+  </div>
+
+<!--   <div class="field-wrap">
+    <input type="password" name="ally[password_hash]" required autocomplete="off" placeholder="Password" />
+  </div>
+
+   <div class="field-wrap">
+    <input type="password" name="password_confirmation" required autocomplete="off" placeholder="Confirm Password" />
+  </div> -->
+
+  <button type="submit" class="button button-block"/>Update</button>
+
+</form>
