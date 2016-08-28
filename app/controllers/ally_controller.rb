@@ -45,7 +45,6 @@ end
 
 # UPDATE
 put '/allies/:id' do
-<<<<<<< HEAD
   #get params from url
   @ally = Ally.find(params[:id])
   @ally.assign_attributes(params[:ally])
@@ -62,17 +61,3 @@ delete '/allies/:id' do
   @ally.destroy
   redirect "/allies"
 end
-=======
-  #edit the ally pages
-  @ally = Ally.find(params[:id])
-
-  redirect "/allies/#{@ally.id}"
-#  @ally.is_available
-end
-
-# delete '/allies/:id' do
-#   @ally = Ally.find(params[:id])
-#   @ally.destroy
-#   redirect "/allies"
-# end
->>>>>>> dev
