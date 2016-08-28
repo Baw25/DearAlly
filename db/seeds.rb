@@ -11,7 +11,6 @@ File.foreach(CATEGORIE_LIST) do |line|
 end
 
 
-
 CSV.foreach(ALLY_LIST, headers: true, header_converters: :symbol) do |line|
   Ally.create(line.to_h)
 end
