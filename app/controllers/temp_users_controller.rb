@@ -45,7 +45,14 @@ end
 
 # temp_user DESTROY
 delete '/temp_users/:id' do
+  p "********   ******" * 5
   @temp_user = TempUser.find(params[:id])
+  @ally_id = Chat.where(params[:id])[0].ally_id
   @temp_user.destroy
-  redirect "/temp_users"
+  redirect "/temp_users/review"
+end
+
+post 'temp_users/end/:ally_id' do
+
+
 end
