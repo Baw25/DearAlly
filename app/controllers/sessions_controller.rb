@@ -1,22 +1,26 @@
-get '/sessions/new' do
+get '/sessions/viewer' do 
+  session.inspect
+end
 
+get '/sessions/new' do
   erb :'/sessions/new'
 end
 
 post '/sessions' do
-  @ally = Ally.find_by_email(params[:email])
-  if @ally && @ally.password_hash == params[:password_hash]
-    session[:id] = @ally.id
+  ses = params[:session]
+  @ally = Ally.find_by(params[:email])
+  if @ally.password_hash == ses[:password_hash]
+    session[:ally_id] = @ally.id
 
     redirect "/allies/#{@ally.id}"
   else
     @errors = ["Username && Password not found."]
-    erb :'error'
+    redirect "/sessions/new"
   end
 end
 
 delete '/sessions' do
-  session[:id] = nil
-  #user logs out on application level header
+  session.delete(:ally_id)
   redirect '/'
 end
+

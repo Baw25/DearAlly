@@ -1,4 +1,8 @@
 get '/' do
 	@categories = Category.all
-  erb :'/index'
+	if session[:ally_id]
+		redirect "/allies/#{session[:ally_id]}"
+	else
+  	erb :'/index'
+	end
 end
