@@ -42,7 +42,7 @@ $(function() {
     }
 
     // Alert the user they have been assigned a random username
-    print('Logging in...');
+    print('Logging in to help channel...');
 
     // Get an access token for the current user, passing a username (identity)
     // and a device ID - for browser-based apps, we'll always just use the 
@@ -53,8 +53,8 @@ $(function() {
     }, function(data) {
         // Alert the user they have been assigned a random username
         username = data.identity;
-        print('You have been assigned random username: ' 
-            + '<span class="me">' + username + '</span>', true);
+        print('Assigned random username: ' 
+            + '<span class="me">' + username + '</span>...', true);
 
         // Initialize the IP messaging client
         accessManager = new Twilio.AccessManager(data.token);
@@ -62,7 +62,7 @@ $(function() {
 
         // Get the general chat channel, which is where all the messages are
         // sent in this simple application
-        print('Joining help channel...');
+        print('Waiting for connection...');
         var promise = messagingClient.getChannelByUniqueName('general');
         promise.then(function(channel) {
             generalChannel = channel;
@@ -89,8 +89,8 @@ $(function() {
     function setupChannel() {
         // Join the general channel
         generalChannel.join().then(function(channel) {
-            print('Joined channel as ' 
-                + '<span class="me">' + username + '</span>', true);
+            print('<span class="me">' + username + '</span>' + ' ' +' has established connection!', true);
+            print('Safe exit button located above');
         });
 
         // Listen for new messages sent to the channel

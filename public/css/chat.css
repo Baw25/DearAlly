@@ -54,6 +54,8 @@ section input {
 #chat_section{
   vertical-align: middle;
   padding-top: 120px;
+  padding-bottom: 120px;
+  padding-left: 25px;
   height: 100%;
 }
 
@@ -61,13 +63,13 @@ section input {
   /*changes inside the chat box*/
   background-color:white;
   padding:10px;
-  height:600px;
-  width:900px;
+  height:500px;
+  width:600px;
   margin:0 auto;
   vertical-align: middle;
-  color: #849091;
+  color: black;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-  border: solid pink 2px;
+  border: solid black 2px;
   position: relative;
 }
 
@@ -85,9 +87,10 @@ section input {
 #chat-input{
   margin-top: 100px;
   padding-bottom: 10px;
-  width: 98%;
-  color: #cdd2d3;
-  border-color: #849091;
+  width: 96%;
+  height: 10%;
+  color: black;
+  border-color: solid black;
   display: inline-block;
   vertical-align: bottom;
   position: absolute;
