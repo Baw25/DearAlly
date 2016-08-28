@@ -5,11 +5,11 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
   // root page jquery
-  $("#help_index").click(function(){
-  	
-   // $("#help_form").submit();
-	});
+  // $("#get_help").click(function){
+  //  
+  // }
 
-	$("")
-
+  $( "#get_help" ).click(function() {
+     $("#help_form").submit();
+  });
 });
