@@ -6,24 +6,19 @@
       </div>
     </a>
     <!-- I NEED HELP HERE -->
-     <form action='/temp_users' method='POST' class="panel">
+     <form action='/temp_users' method='POST' class="panel" id="help_form">
         <div class="panel__content" style="background-color: pink">
-          <h1 class="panel__title">I NEED HELP HERE</h1>
-          <!-- <button type="submit" class="button button-block"/>I need help!</button> -->
+          <h1 class="panel__title" id="help_index">I NEED HELP HERE</h1>
         </div>
       </form>
   </div>
 </div>
 
 <!-- todo -->
-
- <select name="category">
-          <% @categories.each do |category| %>
-            <option value=<%=category.id.to_i %>><%= category.title %></option>
-          <% end %>
-         </select>
-     
-
-
+<div>
+  <% @categories.each do |category| %>
+    <li><%=category.id.to_i %>><%= category.title %></li>
+  <% end %>
+</div> 
 
 <!--  {"category"=>"3"} -->
