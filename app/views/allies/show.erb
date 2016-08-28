@@ -1,4 +1,8 @@
 <form action="/allies" method="post">
   <input type="hidden" name="_method" value="put">
   <button type="submit">I'm available to help</button>
-</form>
+</form> <!--form field exists in DB-->
+
+
+
+ <a href="/allies/<%= @ally.id %>/edit">Edit Information</a>

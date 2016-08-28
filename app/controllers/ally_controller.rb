@@ -9,7 +9,7 @@ get '/allies/new' do
 
   erb :'/allies/new'
 end
-
+#CREATE
 post '/allies' do
   ally = params[:ally]
   if params[:password_confirmation] == ally[:password_hash]
@@ -34,17 +34,25 @@ get '/allies/:id' do
   erb :'/allies/show'
 end
 
+# EDIT
 get '/allies/:id/edit' do
   @ally = Ally.find(params[:id])
 
-  erb :'/allies/edit'
+  erb :'/allies/edit' #
 end
 
+# UPDATE
 put '/allies/:id' do
+  #get params from url
   @ally = Ally.find(params[:id])
-
-  p @ally.available?
+  @ally.assign_attributes(params[:ally])
+  if @ally.save
+    redirect "/allies/#{@ally.id}" #redirect back to ally index page
+  else
+    erb :'allies/edit' #show edit ally view again(potentially displaying errors)
+  end
 end
+
 
 delete '/allies/:id' do
   @ally = Ally.find(params[:id])
