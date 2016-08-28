@@ -1,1 +1,21 @@
-<h1><a href="/allies/new" >Become an Alli</h1>
+<h1><a href="/allies/new" >Become an Alli </a></h1>
+
+
+
+
+
+
+<form action='/temp_users' method='POST'>
+  	 <select name="category">
+      <% @categories.each do |category| %>
+        <option value=<%=category.id.to_i %>><%= category.title %></option>
+    <% end %>
+   </select>
+
+   </br>
+   </br>
+   <button type="submit" class="button button-block"/>I need help!</button>
+
+ </form>
+
+<!--  {"category"=>"3"} -->

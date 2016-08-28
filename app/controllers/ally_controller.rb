@@ -1,9 +1,9 @@
 # DISPLAY
-get '/allies' do
-  @allies = Ally.all
+# get '/allies' do
+#   @allies = Ally.all
 
-  erb :'/allies/index'
-end
+#   erb :'/allies/index'
+# end
 
 get '/allies/new' do
 
@@ -36,6 +36,8 @@ end
 
 # EDIT
 get '/allies/:id/edit' do
+  #when loged in you should be able to click on the header image
+  #and it should take you into the edit profile page
   @ally = Ally.find(params[:id])
 
   erb :'/allies/edit' #
@@ -43,6 +45,7 @@ end
 
 # UPDATE
 put '/allies/:id' do
+<<<<<<< HEAD
   #get params from url
   @ally = Ally.find(params[:id])
   @ally.assign_attributes(params[:ally])
@@ -59,3 +62,17 @@ delete '/allies/:id' do
   @ally.destroy
   redirect "/allies"
 end
+=======
+  #edit the ally pages
+  @ally = Ally.find(params[:id])
+
+  redirect "/allies/#{@ally.id}"
+#  @ally.is_available
+end
+
+# delete '/allies/:id' do
+#   @ally = Ally.find(params[:id])
+#   @ally.destroy
+#   redirect "/allies"
+# end
+>>>>>>> dev
