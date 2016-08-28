@@ -1,9 +1,9 @@
 # DISPLAY
-get '/allies' do
-  @allies = Ally.all
+# get '/allies' do
+#   @allies = Ally.all
 
-  erb :'/allies/index'
-end
+#   erb :'/allies/index'
+# end
 
 get '/allies/new' do
 
@@ -29,8 +29,6 @@ post '/allies' do
 end
 
 get '/allies/:id' do
-  p "redirected yah"
-  p params
   @ally = Ally.find(params[:id])
 #  @status = Ally.is_available
   erb :'/allies/show'
@@ -44,11 +42,13 @@ end
 
 put '/allies/:id' do
   @ally = Ally.find(params[:id])
+
+  redirect "/allies/#{@ally.id}"
 #  @ally.is_available
 end
 
-delete '/allies/:id' do
-  @ally = Ally.find(params[:id])
-  @ally.destroy
-  redirect "/allies"
-end
+# delete '/allies/:id' do
+#   @ally = Ally.find(params[:id])
+#   @ally.destroy
+#   redirect "/allies"
+# end
