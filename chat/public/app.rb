@@ -9,7 +9,8 @@ Dotenv.load
 
 # Render home page
 get '/' do
-  File.read(File.join('public', 'index.html'))
+  # File.read(File.join('public/chat', 'index.html'))
+  
 end
 
 # Generate a token for use in our IP Messaging application

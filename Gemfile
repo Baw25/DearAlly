@@ -16,6 +16,12 @@ gem 'shotgun'
 
 gem 'pusher'
 
+gem 'dotenv'
+
+gem 'faker'
+
+gem 'twilio-ruby'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

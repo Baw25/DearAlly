@@ -1,19 +1,39 @@
-require 'bundler'
-Bundler.require
+require 'twilio-ruby'
+require 'sinatra'
+require 'sinatra/json'
+require 'dotenv'
+require 'faker'
 
-class SinatraPusher < Sinatra::Base
-  configure do
-    register Sinatra::Reloader
-    Pusher.app_id = '242139'
-    Pusher.key = '0abdb79d2684ba446a83'
-    Pusher.secret = '45523cbf75e99c8f3d75'
-  end
+# Load environment configuration
+Dotenv.load
 
-  get '/' do
-    erb :"_chat_box_partial"
-  end
+# Render home page
+get '/chat' do
+  # File.read(File.join('public/chat', 'index.html'))
+  erb:'chat_layout'
+end
 
-  post '/messages' do
-    Pusher['test_channel'].trigger('new_message', :message => params['message'])
-  end
+# Generate a token for use in our IP Messaging application
+get '/token' do
+  # Get the user-provided ID for the connecting device
+  device_id = params['device']
+
+  # Create a random username for the client
+  identity = Faker::Internet.user_name
+
+  # Create a unique ID for the currently connecting device
+  endpoint_id = "TwilioDemoApp:#{identity}:#{device_id}"
+
+  # Create an Access Token for IP messaging usage
+  token = Twilio::Util::AccessToken.new ENV['TWILIO_ACCOUNT_SID'],
+    ENV['TWILIO_API_KEY'], ENV['TWILIO_API_SECRET'], 3600, identity
+
+  # Create IP Messaging grant for our token
+  grant = Twilio::Util::AccessToken::IpMessagingGrant.new
+  grant.service_sid = ENV['TWILIO_IPM_SERVICE_SID']
+  grant.endpoint_id = endpoint_id
+  token.add_grant grant
+
+  # Generate the token and send to client
+  json :identity => identity, :token => token.to_jwt
 end
